@@ -1,6 +1,7 @@
-from agents import Agent, Runner
+from agents import Agent
 from agents.extensions.models.litellm_model import LitellmModel
 import os
+from prompt import career_assistant_prompt
 
 
 google_model = LitellmModel(
@@ -9,7 +10,7 @@ google_model = LitellmModel(
 )
 
 career_assistant = Agent(
-    name= "Carrey the career assistant",
-    instructions= "You are an expert career advisor with over a decade of experience helping people find their dream jobs.",
+    name= "Gaurav",
+    instructions= career_assistant_prompt,
     model = google_model
 )
