@@ -21,8 +21,6 @@ async def handleChat(messages, history):
             if event.type == "raw_response_event" and isinstance(event.data, ResponseTextDeltaEvent):
                 response_text += event.data.delta
                 yield response_text
-            else:
-                yield "Unexpected error occured"
     except Exception as e:
         yield f"Unexpected exception occured"
 
